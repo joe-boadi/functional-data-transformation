@@ -45,7 +45,7 @@ const fullName = (obj) => `${obj?.firstName} ${obj?.lastName}`;
  * @param {Object} person - The object containing the age property
  * @returns {boolean} - True if the person is 18 or older, otherwise false
  */
-const isAdult = person => person?.age >= 18 ? true : false;
+const isAdult = person => person?.age >= 18;
 
 /**
  * Filters an array of person objects to keep only those at least minAge years old
