@@ -45,15 +45,16 @@ const wordCount = str => {
 console.log(wordCount(1))
 console.log(wordCount('code'))
 
-// compose function
+// Compose function
 function compose(...fns) {
-    return fns.reduce(
-        function reducer (accumulator, current) {
-            return function returnedFunc(...args) {
-                return accumulator(current(...args))
-          }
-         }
-      )
+    return function (arg) {
+        return fns.reduceRight((acc, fn) => fn(acc), arg);
+    }
 }
-// const composedFns = compose(capitalize(str), reverseString(str))
-// console.log(composedFns)
+
+// Create composed function
+const composedFns = compose(capitalize, reverseString);
+// Test the composed function
+console.log(composedFns('racecar')); 
+// Output: "Racecar - first character capitalized 
+//from (racecar) is reversed word of racecar"
