@@ -33,12 +33,25 @@ const obj = {
     "position" : "Frontend"
 }
 
-const fullName = (obj) =>  `${obj?.firstName} ${obj?.lastName}`
-// console.log(fullName(obj))
+/**
+ * Concatenates the first and last name of an object
+ * @param {Object} obj - The object containing firstName and lastName properties
+ * @returns {string} - The full name as a single string
+ */
+const fullName = (obj) => `${obj?.firstName} ${obj?.lastName}`;
 
-// Checks if a person is 18 or older (given property age).
+/**
+ * Checks if a person is 18 or older
+ * @param {Object} person - The object containing the age property
+ * @returns {boolean} - True if the person is 18 or older, otherwise false
+ */
 const isAdult = person => person?.age >= 18 ? true : false;
-console.log(isAdult(obj))
 
+/**
+ * Filters an array of person objects to keep only those at least minAge years old
+ * @param {Array} people - The array of person objects
+ * @param {number} minAge - The minimum age to filter by
+ * @returns {Array} - The filtered array of person objects
+ */
 const filterByAge = (people, minAge) => people?.filter(person => person.age >= minAge);
-console.log(filterByAge(persons, 18));
+
