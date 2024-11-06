@@ -6,7 +6,7 @@
     });
     return new_arr
  };
-//  console.log(double([2, 3, 4, 5]))
+ console.log(double([2, 3, 4, 5]))
 
 // Filters out even numbers from an array.
 const filterEven = arr => {
@@ -18,7 +18,7 @@ const filterEven = arr => {
     })
     return evenArr
 }
-// console.log(filterEven([3, 2, 5, 4, 6, 7, 10]))
+console.log(filterEven([3, 2, 5, 4, 6, 7, 10]))
 
 //Calculates the sum of all numbers in an array.
 const sum = arr => {
@@ -28,10 +28,11 @@ const sum = arr => {
     })
     return total;
 }
-// console.log(sum([3, 2, 5, 4, 6, 7, 10]))
+console.log(sum([3, 2, 5, 4, 6, 7, 10]))
 
 // Calculates the average of all numbers in an array
 const average = arr => {
     return sum(arr) / arr.length;
 }
-// console.log(average([3, 2, 5, 4, 6, 7, 10]))
+
+console.log(average([3, 2, 5, 4, 6, 7, 10]))
