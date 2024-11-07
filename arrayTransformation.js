@@ -1,38 +1,28 @@
-// Doubles every number in an array.
- const double = arr => {
-    let new_arr = [];
-    new_arr = arr.map(element => {
-        return element * 2;
-    });
-    return new_arr
- };
- console.log(double([2, 3, 4, 5]))
+/**
+ * Doubles every number in an array
+ * @param {Array<number>} arrs - The array of numbers to double
+ * @returns {Array<number>} - The array with each number doubled
+ */
+const double = arrs => arrs?.map(element => element * 2);
 
-// Filters out even numbers from an array.
-const filterEven = arr => {
-    let evenArr= []
-    arr.filter(element => {
-        if (element % 2 === 0) {
-            evenArr.push(element)
-        }
-    })
-    return evenArr
-}
-console.log(filterEven([3, 2, 5, 4, 6, 7, 10]))
+/**
+ * Filters out even numbers from an array
+ * @param {Array<number>} arrs - The array of numbers to filter
+ * @returns {Array<number>} - The array with only even numbers
+ */
+const filterEven = arrs => arrs?.filter(element => element % 2 === 0);
 
-//Calculates the sum of all numbers in an array.
-const sum = arr => {
-    let total = 0;
-    arr.map(element => {
-        total += element;
-    })
-    return total;
-}
-console.log(sum([3, 2, 5, 4, 6, 7, 10]))
+/**
+ * Calculates the sum of all numbers in an array
+ * @param {Array<number>} arrs - The array of numbers to sum
+ * @returns {number} - The sum of all numbers in the array
+ */
+const sum = arrs => arrs?.reduce((total, item) => total + item, 0);
 
-// Calculates the average of all numbers in an array
-const average = arr => {
-    return sum(arr) / arr.length;
-}
+/**
+ * Calculates the average of all numbers in an array
+ * @param {Array<number>} arrs - The array of numbers to average
+ * @returns {number} - The average of all numbers in the array
+ */
+const average = arrs => arrs?.reduce((prev, cur) => prev + cur, 0) / arrs.length;
 
-console.log(average([3, 2, 5, 4, 6, 7, 10]))

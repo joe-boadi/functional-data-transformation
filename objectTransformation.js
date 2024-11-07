@@ -1,32 +1,3 @@
-const obj = {
-    "firstname" : "Joe",
-    "lastname" : "Orion",
-    "age" : 28,
-    "position" : "Frontend"
-}
-
-/* 
- *   Returns the full name of a person object (given 
- *   properties firstName and lastName) 
-*/
-const fullName = (obj) => {
-    let full_name = "";
-    return full_name = obj.firstname + " " + obj.lastname
-}
-// console.log(fullName(obj))
-
-/*
- * Checks if a person is 18 or older (given property age).
- */
-const isAdult = person => {
-    if ( person.age >= 18) {
-        return true;
-    }
-    return !true;
-}
-// console.log(isAdult(obj))
-
-
 // An array of objs
 const persons = [
     {
@@ -54,17 +25,33 @@ const persons = [
         "position" : "QA"
     },
 ]
-/*
- * Filters an array of person objects to keep 
- *   only those at least minAge years old.
-*/
-const filterByAge = (people, minAge) => {
-    let keep_person = []
-    people.map( person => {
-        if (person.age >= minAge){
-           keep_person .push(person)
-        }
-    })
-    return keep_person
+
+const obj = {
+    "firstName" : "Joe",
+    "lastName" : "Orion",
+    "age" : 28,
+    "position" : "Frontend"
 }
-console.log(filterByAge(persons, 18))
+
+/**
+ * Concatenates the first and last name of an object
+ * @param {Object} obj - The object containing firstName and lastName properties
+ * @returns {string} - The full name as a single string
+ */
+const fullName = (obj) => `${obj?.firstName} ${obj?.lastName}`;
+
+/**
+ * Checks if a person is 18 or older
+ * @param {Object} person - The object containing the age property
+ * @returns {boolean} - True if the person is 18 or older, otherwise false
+ */
+const isAdult = person => person?.age >= 18;
+
+/**
+ * Filters an array of person objects to keep only those at least minAge years old
+ * @param {Array} people - The array of person objects
+ * @param {number} minAge - The minimum age to filter by
+ * @returns {Array} - The filtered array of person objects
+ */
+const filterByAge = (people, minAge) => people?.filter(person => person.age >= minAge);
+
